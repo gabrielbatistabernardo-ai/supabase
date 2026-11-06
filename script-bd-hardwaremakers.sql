@@ -38,3 +38,11 @@ CREATE TABLE IF NOT EXISTS despesas (
     conta_id BIGINT REFERENCES contas(id) ON DELETE SET NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
+
+CREATE TABLE IF NOT EXISTS metas (
+    id BIGSERIAL PRIMARY KEY,
+    descricao VARCHAR(150) NOT NULL,
+    valor_alvo NUMERIC(10, 2) NOT NULL,
+    valor_poupado NUMERIC(10, 2) DEFAULT 0.00,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
