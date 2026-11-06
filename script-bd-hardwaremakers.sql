@@ -8,3 +8,13 @@ SELECT*FROM pessoa;
 
 INSERT INTO pessoa (nome, cpf) VALUES ('Allana Patrícia Lívia da Silva', '530.901.129-30');
 INSERT INTO pessoa (nome, cpf) VALUES ('Francisca Amanda Carolina Almada', '391.331.205-60');
+
+
+
+CREATE TABLE IF NOT EXISTS contas (
+    id BIGSERIAL PRIMARY KEY,
+    titular VARCHAR(100) NOT NULL,
+    saldo NUMERIC(10, 2) NOT NULL DEFAULT 0.00,
+    limite NUMERIC(10, 2) NOT NULL DEFAULT 0.00,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
